@@ -1,0 +1,623 @@
+*, *::before,*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+:root {
+    --grey: #4a4a4a;
+    --grey-light: #d5d8da;
+    --grey-lighter: #efefef;
+    --grey-dark: #363636;
+    --blue: #2797fe;
+    --blue-dark: #083aa9;
+}
+
+body {
+    background-color: var(--grey-light);
+    color: var(--grey);
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+
+/* ################## */
+/* ##### HEADER #####*/
+/* ################## */
+
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6.4rem;
+    padding: 0rem 2.4rem;
+    position: fixed;
+    width: 100vw; 
+}
+
+/*---------------- left ----------------*/
+
+.header_left {
+    display: flex;
+    align-items: center;
+    margin-left: 2.4rem;
+    gap: 0.4rem;
+}
+
+.header_logo {
+    width: 4rem;
+}
+
+.header_logo > img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.logo--mobile-2, .logo--mobile-3, .logo--mobile-4 {
+    display: none;
+}
+
+.header_text {
+    color: var(--grey);
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+.header_text_light {
+    color: var(--grey-light);
+    font-weight: 400;
+}
+
+/*---------------- right -------------*/
+.header_right {
+    display: flex;
+    align-items: center;
+}
+
+.header_right > ul {
+    display: flex;
+    gap: 1.6rem;
+    margin-right: 2.4rem;
+    font-size: 1.6rem;
+}
+
+.header_right > ul > li {
+   list-style: none;
+   cursor: pointer;
+}
+
+.header_right > ul > li:hover {
+    color: #2797fe;
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .header_text, .header_right {
+        display: none;
+    }
+
+    .header_left {
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .logo--mobile-2, .logo--mobile-3, .logo--mobile-4 {
+        display: block;
+    }
+}
+
+
+/* ################## */
+/* ##### HERO #####*/
+/* ################## */
+
+.hero {
+    display: flex;
+    padding: 3.2rem 0rem;
+    padding-top: 9.6rem; 
+    /* padding collapes 6.4+3.2 = 9.6rem */
+}
+
+.hero_left {
+    flex: 6;
+    padding: 0 2.4rem;
+}
+
+.hero_img > img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* 100% of container not overflow*/
+}
+
+.hero_right {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.4rem;
+}
+
+.hero_right > h1 {
+    font-size: 4.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero_right > p {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.hero_right > button {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: white;
+    background-color: var(--grey);
+    padding: 0.8rem;
+    width: 80%;
+    cursor: pointer;
+}
+
+.hero_right > button:hover {
+    background-color: var(--grey-dark);
+}
+
+@media only screen and (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero_left {
+        padding: 0;
+        flex: 1;
+    }
+
+    .hero_right {
+        text-align: center;
+        flex: 1;
+        padding: 3.2rem 1.6rem;
+        gap: 0; 
+        /* reset gap */
+    }
+
+    .hero_right > h1 {
+        margin-bottom: 3.2rem;
+    }
+
+    .hero_right > p {
+        margin-bottom: 2.4rem;
+    }
+
+    .hero_right > button {
+        width: 100%;
+        padding: 1.6rem;
+    }
+
+}
+
+
+/* ################## */
+/* ####### INFO ######*/
+/* ################## */
+
+.info {
+    display: flex;
+    padding: 3.2rem 0rem;
+    background-color: #fff;
+}
+
+/*--------------- left ----------------*/
+
+.info_left {
+    flex: 6;
+    padding: 0rem 2.4rem;
+}
+
+.info_left_img {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 3.2rem;
+}
+
+.info_left_img > img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info_left_text > h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 2.4rem;
+}
+
+.info_left_text > p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 3.2rem;
+}
+
+.info_left_text > p:last-child {
+    font-weight: 500;
+    margin-bottom: 0;
+} 
+
+/*--------------- right ----------------*/
+
+.info_right {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.info_card {
+    width: 100%;
+    border: 1px solid var(--grey-lighter);
+    display: flex;
+    padding: 1.6rem;
+}
+
+.info_card:hover {
+    background-color: var(--grey-light);
+}
+
+.info_card_img {
+    flex: 3.5;
+}
+
+.info_card_img > img {
+    width: 100%;
+    height: auto;
+    display: block;
+} 
+
+.info_card_text {
+    background-color: white;
+    flex: 6.5; /* size of text 65% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2.2rem;
+    background-color: transparent;
+}
+
+.info_card_text > h4 {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.info_card_text > p {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.info_card_text > a {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.info_card_text > a:hover {
+    color: var(--blue-dark);
+}
+
+@media only screen and (max-width: 768px) {
+
+    .info_left {
+        display: none; /* ให้ภาพฝั่งซ้ายหายไป */
+    }
+
+    .info_right {
+        gap: 3.2rem;
+    }
+
+    .info_card {
+        flex-direction: column;
+        gap: 3.2rem;
+    }
+
+    .info_card_text > h4, .info_card_text > p, .info_card_text > a {
+        margin-bottom: 5px;
+    }
+
+    .info_card_text {
+        padding: 0 1.6rem;
+    }
+
+    .card_img-1 {
+        content: url(./images/information-orientation-mobile.jpg);
+    }
+
+    .card_img-2 {
+        content: url(./images/information-campus-mobile.jpg);
+    }
+
+    .card_img-3 {
+        content: url(./images/information-guest-lecture-mobile.jpg);
+    }
+}
+
+
+/* ##################### */
+/* ####### COURSE ######*/
+/* ##################### */
+
+.course {
+    padding: 3.2rem 7.2rem;
+    text-align: center;
+}
+
+.course_header {
+    background-color: var(--grey-light);
+    margin-bottom: 3.2rem;
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+.course_list {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3.2rem;
+}
+
+.course_list_mobile {
+    display: none;
+}
+
+.course_item {
+    background-color: white;
+}
+
+.course_img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.course_img > img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.course_detail {
+    padding: 1.6rem;
+    text-align: left;
+}
+
+.course_detail > h4 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.course_detail > p {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.course_detail > p:nth-child(2) {
+    margin-bottom: 0.8rem;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .course_list {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .course {
+        padding: 3.2rem;
+    }
+    
+    .course_list {
+        display: none;
+    }
+
+    .course_list_mobile {
+        display: block;
+    }
+
+    .course_list_mobile > div {
+        background-color: var(--grey-lighter);
+        padding: 1.6rem 1.6rem 2.4rem 1.6rem;
+        text-align: left;
+        font-size: 3rem;
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+    }
+
+    .course_header > h1 {
+        margin-bottom: 1.6rem;
+    }
+}
+
+
+/* ############################ */
+/* ####### THESIS EXHIBIT ##### */
+/* ############################ */
+
+.thesis {
+    background-color: var(--grey-lighter);
+    text-align: center;
+    padding: 3.2rem 0;
+}
+
+.thesis_header {
+    background-color: var(--grey-lighter);
+    margin-bottom: 3.2rem;
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+.thesis_content {
+    display: flex;
+    height: 100%;
+}
+
+.thesis_content_left {
+    flex: 6;
+    height: 100%;
+    padding: 0 2.4rem;
+}
+
+.thesis_video {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 2.4rem;
+}
+
+.thesis_video > video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.thesis_text {
+    text-align: left;
+}
+
+.thesis_text > h4 {
+    font-size: 3rem; 
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+}
+
+.thesis_text > p {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.thesis_content_right {
+    flex: 4;
+    height: 100%;
+}
+
+.thesis_card {
+    width: 100%;
+    border: 1px solid var(--grey-lighter);
+    display: flex;
+    padding: 1.6rem;
+}
+
+.thesis_card:hover {
+    background-color: var(--grey-light);
+}
+
+.thesis_card_img {
+    flex: 3.5; /* size of pic 35% */
+}
+
+.thesis_card_img > img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.thesis_card_text {
+    background-color: white;
+    flex: 6.5; /* size of text 65% */
+    display: flex; /* For control text inside */
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2.2rem;
+    background-color: transparent;
+}
+
+.thesis_card_text > h4 {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.thesis_card_text > p {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.thesis_card_text > a {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.thesis_card_text > a:hover {
+    color: var(--blue-dark);
+}
+
+@media only screen and (max-width: 768px) {
+
+    .thesis_content_left {
+        padding: 0;
+    }
+
+    .thesis_content_right, .thesis_text {
+        display: none;
+    }   
+}
+
+
+/* #################### */
+/* ####### FOOTER ##### */
+/* #################### */
+
+.footer {
+    border: 1px solid var(--grey-light);
+    padding: 1.6rem 2.4rem;
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.footer_right {
+    display: flex;
+    gap: 0.8rem;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .footer {
+        padding: 2.4rem 1.6rem 1.6rem 1.6rem;
+    }
+
+    .footer_left {
+        padding-top: 1.6rem;
+    }
+    
+    .footer_right {
+        display: none;
+    }
+    
+}
+
+/* UTILITIES CLASS */
+
+.card {
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card-sm:hover {
+    transform: scale(1.05);
+}
+
